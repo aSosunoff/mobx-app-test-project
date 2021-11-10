@@ -29,23 +29,18 @@ const useCounter = () => {
   return { counter };
 };
 
-export const App =
-  observer <
-  React.FC >
-  (() => {
+export const App = observer<React.FC>(() => {
     const { counter } = useCounter();
 
     return <></>;
   });
 ```
 
----
+## class out use state
 
 ```js
 import { makeAutoObservable } from "mobx";
 import { observer } from "mobx-react";
-
-// class out use state
 
 class Counter {
   count = 0;
@@ -63,23 +58,18 @@ class Counter {
   };
 }
 
-export const App =
-  observer <
-  React.FC >
-  (() => {
+export const App = observer<React.FC>(() => {
     const [counter] = useState(() => new Counter());
 
     return <></>;
   });
 ```
 
----
+## decorator
 
 ```js
 import { makeObservable, observable, action, configure } from "mobx";
 import { observer } from "mobx-react";
-
-// decorator
 
 class Counter {
   @observable
@@ -106,23 +96,18 @@ const useCounter = () => {
   return { counter };
 };
 
-export const AppDecorator =
-  observer <
-  React.FC >
-  (() => {
+export const AppDecorator = observer<React.FC>(() => {
     const { counter } = useCounter();
 
     return <></>;
   });
 ```
 
----
+## object
 
 ```js
 import { observable, configure } from "mobx";
 import { observer } from "mobx-react";
-
-// object
 
 const useCounter = () => {
   const [counter] = useState(() =>
@@ -142,23 +127,18 @@ const useCounter = () => {
   return { counter };
 };
 
-export const AppObject =
-  observer <
-  React.FC >
-  (() => {
+export const AppObject = observer<React.FC>(() => {
     const { counter } = useCounter();
 
     return <></>;
   });
 ```
 
----
+## useLocalObservable
 
 ```js
 import { configure } from "mobx";
 import { observer, useLocalObservable } from "mobx-react";
-
-// useLocalObservable
 
 const useCounter = () =>
   useLocalObservable(() => ({
@@ -173,10 +153,7 @@ const useCounter = () =>
     },
   }));
 
-export const AppUseLocalObservable =
-  observer <
-  React.FC >
-  (() => {
+export const AppUseLocalObservable = observer<React.FC>(() => {
     const counter = useCounter();
 
     return <></>;
