@@ -35,7 +35,7 @@ export const App = observer<React.FC>(() => {
   return <></>;
 });
 ```
-
+---
 ```js
 import { makeAutoObservable } from "mobx";
 import { observer } from "mobx-react";
@@ -64,7 +64,7 @@ export const App = observer<React.FC>(() => {
   return <></>;
 });
 ```
-
+---
 ```js
 import { makeObservable, observable, action, configure } from "mobx";
 import { observer } from "mobx-react";
@@ -102,7 +102,7 @@ export const AppDecorator = observer<React.FC>(() => {
   return <></>;
 });
 ```
-
+---
 ```js
 import { observable, configure } from "mobx";
 import { observer } from "mobx-react";
@@ -133,7 +133,7 @@ export const AppObject = observer<React.FC>(() => {
   return <></>;
 });
 ```
-
+---
 ```js
 import { configure } from "mobx";
 import { observer, useLocalObservable } from "mobx-react";
