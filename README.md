@@ -1,10 +1,10 @@
 # Mobx App Test Project
 
+## class into use state
+
 ```js
 import { makeAutoObservable } from "mobx";
 import { observer } from "mobx-react";
-
-// class into use state
 
 const useCounter = () => {
   const [counter] = useState(
@@ -29,13 +29,18 @@ const useCounter = () => {
   return { counter };
 };
 
-export const App = observer<React.FC>(() => {
-  const { counter } = useCounter();
+export const App =
+  observer <
+  React.FC >
+  (() => {
+    const { counter } = useCounter();
 
-  return <></>;
-});
+    return <></>;
+  });
 ```
+
 ---
+
 ```js
 import { makeAutoObservable } from "mobx";
 import { observer } from "mobx-react";
@@ -58,13 +63,18 @@ class Counter {
   };
 }
 
-export const App = observer<React.FC>(() => {
-  const [counter] = useState(() => new Counter());
+export const App =
+  observer <
+  React.FC >
+  (() => {
+    const [counter] = useState(() => new Counter());
 
-  return <></>;
-});
+    return <></>;
+  });
 ```
+
 ---
+
 ```js
 import { makeObservable, observable, action, configure } from "mobx";
 import { observer } from "mobx-react";
@@ -96,13 +106,18 @@ const useCounter = () => {
   return { counter };
 };
 
-export const AppDecorator = observer<React.FC>(() => {
-  const { counter } = useCounter();
+export const AppDecorator =
+  observer <
+  React.FC >
+  (() => {
+    const { counter } = useCounter();
 
-  return <></>;
-});
+    return <></>;
+  });
 ```
+
 ---
+
 ```js
 import { observable, configure } from "mobx";
 import { observer } from "mobx-react";
@@ -127,13 +142,18 @@ const useCounter = () => {
   return { counter };
 };
 
-export const AppObject = observer<React.FC>(() => {
-  const { counter } = useCounter();
+export const AppObject =
+  observer <
+  React.FC >
+  (() => {
+    const { counter } = useCounter();
 
-  return <></>;
-});
+    return <></>;
+  });
 ```
+
 ---
+
 ```js
 import { configure } from "mobx";
 import { observer, useLocalObservable } from "mobx-react";
@@ -153,9 +173,12 @@ const useCounter = () =>
     },
   }));
 
-export const AppUseLocalObservable = observer<React.FC>(() => {
-  const counter = useCounter();
+export const AppUseLocalObservable =
+  observer <
+  React.FC >
+  (() => {
+    const counter = useCounter();
 
-  return <></>;
-});
+    return <></>;
+  });
 ```
